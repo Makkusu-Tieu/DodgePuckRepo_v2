@@ -65,6 +65,10 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("Hit Blocky");
+
+            Instantiate(Blocky, new Vector2(Random.Range(-xRange, xRange), Random.Range(-yRange, yRange)), Quaternion.identity);
+            
+            Instantiate(Puck, new Vector2(Random.Range(-xRange, xRange), Random.Range(-yRange, yRange)), Quaternion.identity);
         }
     }
 }
