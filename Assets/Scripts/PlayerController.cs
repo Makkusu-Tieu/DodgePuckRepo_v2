@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float yRange;
     public GameObject Puck;
     public GameObject Blocky;
+    public GameObject scoreText;
+    public GameObject gameOverText;
 
     // Start is called before the first frame update
     void Start()
@@ -50,9 +52,9 @@ public class PlayerController : MonoBehaviour
         puckArray = GameObject.FindGameObjectsWithTag("Puck");
         Debug.Log("Puck Count: " + puckArray.Length);
 
-        float moveHorizontal = (Input.GetAxis("Horizontal"));
+        float moveHorizontal = (Input.GetAxisRaw("Horizontal"));
 
-        float moveVertical = (Input.GetAxis("Vertical"));
+        float moveVertical = (Input.GetAxisRaw("Vertical"));
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
@@ -69,6 +71,14 @@ public class PlayerController : MonoBehaviour
             Instantiate(Blocky, new Vector2(Random.Range(-xRange, xRange), Random.Range(-yRange, yRange)), Quaternion.identity);
             
             Instantiate(Puck, new Vector2(Random.Range(-xRange, xRange), Random.Range(-yRange, yRange)), Quaternion.identity);
+
+            scoreText.GetComponent<ScoreKeeper>().UpdateScore();
+        }
+
+        if (other.gameObject.CompareTag("Puck"))
+        {
+            Time.timeScale = 0;
+            gameOverText.SetActive(true);
         }
     }
 }
