@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         //Instantiate(Puck, new Vector2(Random.Range(-xRange, xRange), Random.Range(-yRange, yRange)), Quaternion.identity);
 
+
         GameObject[] puckArray;
         puckArray = GameObject.FindGameObjectsWithTag("Puck");
         Debug.Log("Puck Count: " + puckArray.Length);
@@ -80,5 +81,28 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0;
             gameOverText.SetActive(true);
         }
+    }
+
+    public void NewGame()
+    {
+        Debug.Log("It's a new game!");
+        
+        GameObject[] allPucks = GameObject.FindGameObjectsWithTag("Puck");
+        foreach (GameObject dude in allPucks)
+            GameObject.Destroy(dude);
+
+        GameObject[] allBlockys = GameObject.FindGameObjectsWithTag("Blocky");
+        foreach (GameObject dude in allBlockys)
+            GameObject.Destroy(dude);
+
+        transform.position = new Vector2(0, 0);
+        
+        Instantiate(Blocky, new Vector2(Random.Range(-xRange, xRange), Random.Range(-yRange, yRange)), Quaternion.identity);
+        Instantiate(Puck, new Vector2(Random.Range(-xRange, xRange), Random.Range(-yRange, yRange)), Quaternion.identity);
+        
+        gameOverText.SetActive(false);
+        Time.timeScale = 1;
+
+        scoreText.GetComponent<ScoreKeeper>().scoreValue = 0;
     }
 }
