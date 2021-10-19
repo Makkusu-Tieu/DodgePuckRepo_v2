@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
             
             Instantiate(Puck, new Vector2(Random.Range(-xRange, xRange), Random.Range(-yRange, yRange)), Quaternion.identity);
 
+            scoreText.GetComponent<ScoreKeeper>().scoreValue += 5;
             scoreText.GetComponent<ScoreKeeper>().UpdateScore();
         }
 
@@ -104,5 +105,6 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1;
 
         scoreText.GetComponent<ScoreKeeper>().scoreValue = 0;
+        scoreText.GetComponent<ScoreKeeper>().UpdateScore();
     }
 }

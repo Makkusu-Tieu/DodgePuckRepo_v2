@@ -39,9 +39,15 @@ public class PuckController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("WALLLLL");
-        puckSpeed = -puckSpeed;
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            Debug.Log("WALLLL");
+            puckSpeed = -puckSpeed;
+        }
+        
+        //Debug.Log("WALLLLL");
+       // puckSpeed = -puckSpeed;
     }
 }

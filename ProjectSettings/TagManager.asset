@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Puck
   - Blocky
+  - Wall
   layers:
   - Default
   - TransparentFX

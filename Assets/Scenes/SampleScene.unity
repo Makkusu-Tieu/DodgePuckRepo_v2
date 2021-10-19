@@ -1237,32 +1237,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cb5db03e93d7fa4cb68ac023e654780, type: 3}
---- !u!1 &1794927392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2622120542311925849, guid: 5cb5db03e93d7fa4cb68ac023e654780, type: 3}
-  m_PrefabInstance: {fileID: 6391359193724721951}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1794927393
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794927392}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1935054205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,14 +1465,6 @@ PrefabInstance:
     - target: {fileID: 4239913526225796683, guid: 5cb5db03e93d7fa4cb68ac023e654780, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6985364065197973724, guid: 5cb5db03e93d7fa4cb68ac023e654780, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: ae65cf847504b8749b5e0443c5aa7ee8, type: 3}
-    - target: {fileID: 6985364065197973724, guid: 5cb5db03e93d7fa4cb68ac023e654780, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cb5db03e93d7fa4cb68ac023e654780, type: 3}
