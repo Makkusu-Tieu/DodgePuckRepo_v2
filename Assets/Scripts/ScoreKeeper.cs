@@ -6,15 +6,16 @@ using TMPro;
 public class ScoreKeeper : MonoBehaviour
 {
     private TextMeshProUGUI scoreText;
+    private TextMeshProUGUI highScoreText;
     public int scoreValue;
+    public int highScoreValue;
     
-    // Start is called before the first frame update
     void Start()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
+        highScoreText = GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -24,5 +25,14 @@ public class ScoreKeeper : MonoBehaviour
     {
         //scoreValue += 5;
         scoreText.text = "Score: " + scoreValue. ToString();
+    }
+
+    public void UpdateHighScore()
+    {
+        if (scoreValue > highScoreValue)
+        {
+            highScoreValue = scoreValue;
+            highScoreText.text = "High Score: " + highScoreValue. ToString();
+        }
     }
 }
