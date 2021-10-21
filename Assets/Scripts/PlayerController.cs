@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public GameObject Blocky;
     public GameObject scoreText;
     public GameObject gameOverText;
-    public GameObject highScoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -76,8 +75,6 @@ public class PlayerController : MonoBehaviour
 
             scoreText.GetComponent<ScoreKeeper>().scoreValue += 5;
             scoreText.GetComponent<ScoreKeeper>().UpdateScore();
-
-            scoreText.GetComponent<ScoreKeeper>().UpdateHighScore();
         }
 
         if (other.gameObject.CompareTag("Puck"))

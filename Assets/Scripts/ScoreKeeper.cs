@@ -8,7 +8,7 @@ public class ScoreKeeper : MonoBehaviour
     private TextMeshProUGUI scoreText;
     private TextMeshProUGUI highScoreText;
     public int scoreValue;
-    public int highScoreValue;
+    private int highScoreValue;
     
     void Start()
     {
@@ -24,15 +24,11 @@ public class ScoreKeeper : MonoBehaviour
     public void UpdateScore()
     {
         //scoreValue += 5;
-        scoreText.text = "Score: " + scoreValue. ToString();
-    }
-
-    public void UpdateHighScore()
-    {
+        scoreText.text = "Score: " + scoreValue.ToString();
         if (scoreValue > highScoreValue)
         {
             highScoreValue = scoreValue;
-            highScoreText.text = "High Score: " + highScoreValue. ToString();
+            highScoreText.text = "New High Score! : " + highScoreValue.ToString();
         }
     }
 }
